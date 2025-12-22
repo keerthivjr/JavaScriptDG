@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 07</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100%;
+            font-size: 16px;
+            background-color: #f0db4f;
+            color: #323330;
+        }
+
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 250%;
+        }
+
+        p {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <h1>JavaScript 07</h1>
+        <p>🔀 Switch Statements</p>
+
+    </main>
+
+</body>
+<script>
+    // Conditionals: Switch Statements
+
+    // Comment out sections to see examples
+
+    // Syntax
+    // switch (expression OR value) {
+
+    //     case choice1: 
+    //     // run this code
+    //     break;
+
+    //     case choice2:
+    //     // run this different code
+    //     break;      
+
+    //     //add as many cases as needed
+
+    //     default:
+    //     // run this code if no case matches
+    //     // no need for a break here
+    // }
+
+
+    // Example #1
+    switch (2) {
+
+        case 1:
+            console.log(1);
+            break;
+
+        case 2:
+            console.log(2);
+            break;
+
+        case 3:
+            console.log(3);
+            break;
+
+        default:
+            console.log("No Match");
+    }
+
+    // Example #2: Evaluate Numbers
+    switch (Math.floor(Math.random() * 5 + 1)) {
+
+        case 1:
+            console.log(1);
+            break;
+
+        case 2:
+            console.log(2);
+            break;
+
+        case 3:
+            console.log(3);
+            break;
+
+        default:
+            console.log("No Match");
+    }
+
+    // Rock, Paper, Scissors Decisions Tree
+    let playerOne = "scissors";
+    let computer = "paper";
+
+    switch (playerOne) {
+        case computer:
+            console.log("Tie Game!");
+            break;
+        case "rock":
+            if (computer === "paper") {
+                console.log("Computer Wins!");
+            } else {
+                console.log("playerOne wins!");
+            }
+            break;
+        case "paper":
+            if (computer === "scissors") {
+                console.log("Computer Wins!");
+            } else {
+                console.log("playerOne wins!");
+            }
+            break;
+        default:
+            if (computer === "rock") {
+                console.log("Computer Wins!");
+            } else {
+                console.log("playerOne wins!");
+            }
+            break;
+    }
+</script>
+
+</html>
