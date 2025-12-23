@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 16</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100%;
+            font-size: 16px;
+            background-color: #f0db4f;
+            color: #323330;
+        }
+
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 250%;
+        }
+
+        p {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <h1>JavaScript 16</h1>
+        <p>Objects</p>
+
+    </main>
+
+</body>
+<script>
+    // Classes
+
+    // Example
+    class Pizza {
+        constructor(pizzaType) {
+            this.type = pizzaType;
+            this.size = "medium";
+            this.crust = "original";
+        }
+        bake() {
+            console.log(`Baking a ${this.size} ${this.type} ${this.crust} crust pizza. `);
+        }
+    }
+
+    // Pass a parameter into a class
+    const myPizza = new Pizza("pepperoni");
+    myPizza.bake();
+
+
+    // Factory Function
+    // Another way to create an object in JavaScript
+    function pizzaFactory(pizzaSize) {
+        const crust = "original";
+        const size = pizzaSize;
+        return {
+            bakeTwo: () => console.log(`Baking a ${size} ${crust} crust pizza.`)
+        };
+    }
+
+    const myPizzaTwo = pizzaFactory("small");
+    myPizzaTwo.bakeTwo();
+
+    // Sources 👇
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+    // https://www.w3schools.com/js/js_classes.asp
+</script>
+
+</html>

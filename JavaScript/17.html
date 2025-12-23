@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 17</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100%;
+            font-size: 16px;
+            background-color: #f0db4f;
+            color: #323330;
+        }
+
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 250%;
+        }
+
+        p {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <h1>JavaScript 17</h1>
+        <p>JSON</p>
+
+    </main>
+
+</body>
+<script>
+    // JSON: JavaScript Object Notation 
+
+    /*JSON is used to send and receive data. JSON is a text format for storing and transporting data. It is completely language independent, meaning JSON is used to send & receive data in many languages...not just in JavaScript. */
+
+    const myObj = {
+        name: "James",
+        hobbies: ["Music", "Design", "Jiu Jitsu"],
+        hello: function () {
+            console.log("Hello!");
+        }
+    };
+    console.log(myObj);
+    console.log(myObj.name); // Call the name
+    myObj.hello(); // Call the "hello" method
+    console.log(typeof myObj); // Object
+
+    const sendJSON = JSON.stringify(myObj);
+    console.log(sendJSON); // Converts Object into JSON
+    console.log(typeof sendJSON); // It is a string
+    // JSON does not send functions, so "hello" does not appear in the JSON file.
+
+
+    // JSON.parse()
+
+    /* When receiving data from a web server, the data is always a string. Parse the data with JSON.parse(), and the data becomes a JavaScript object. */
+
+    // JSON.parse() = JSON to Object
+
+    const receiveJSON = JSON.parse(sendJSON); //JSON.parse() method
+    console.log(receiveJSON); // Returned as a JavaScript object
+    console.log(typeof receiveJSON); // The type is an object
+</script>
+
+</html>

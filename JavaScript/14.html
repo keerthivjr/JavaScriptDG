@@ -99,11 +99,11 @@
     // Rock, Paper, Scissors: Refactored with Functions
     const initGame = () => {
         const startGame = confirm("Shall we play rock, paper, or scissors?");
-        startGame ? playGame() : alert("Ok, maybe next time.");
+        startGame ? playGameFlow() : alert("Ok, maybe next time.");
     };
 
     // Game flow function
-    const playGame = () => {
+    const playGameFlow = () => {
         while (true) {
             let playerChoice = getPlayerChoice();
             playerChoice = formatPlayerChoice(playerChoice);

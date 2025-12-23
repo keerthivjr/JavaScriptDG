@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript 19</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            width: 100vw;
+            height: 48px;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            background-color: #323330;
+            color: #fff;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            padding-top: 48px;
+        }
+
+        .view1 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: #f0db4f;
+            color: #000;
+        }
+
+        .view1>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #323330;
+            border-radius: 10px;
+            color: #fff;
+            margin: 10px;
+        }
+
+        .view2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            background-color: darkblue;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>DOM</h1>
+    </nav>
+    <main>
+        <section id="view1" class="view view1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </section>
+        <section id="view2" class="view view2">
+            <h2>My 2nd View</h2>
+        </section>
+    </main>
+</body>
+<script>
+    // DOM: Document Object Model
+    const view1 = document.getElementById("view1"); // Select Element by ID
+    console.log(view1);
+
+    // The querySelector() method returns the first element that matches a CSS selector. You must speicfy if it is a class(.) or ID(#)
+    const view2 = document.querySelector("#view2");
+    console.log(view2);
+
+    // Change the CSS property by accesing the style porperty in JavaScript
+    // view1.style.display = "none";
+    // view2.style.display = "flex";
+
+    const views = document.getElementsByClassName("view"); // By class name
+    console.log(views);
+    const sameViews = document.querySelectorAll(".view")
+    console.log(sameViews);
+
+    const divs = view1.querySelectorAll("div");
+    console.log(divs);
+    const sameDivs = view1.getElementsByTagName("div");
+    console.log(sameDivs);
+
+    const evenDivs = view1.querySelectorAll("div:nth-of-type(2n)");
+    console.log(evenDivs);
+    for (let i = 0; i < evenDivs.length; i++) {
+        evenDivs[i].style.backgroundColor = "darkblue";
+        evenDivs[i].style.width = "200px";
+        evenDivs[i].style.height = "200px";
+    }
+
+    const navText = document.querySelector("nav h1");
+    console.log(navText);
+    navText.textContent = "Hey World!";
+    const navbar = document.querySelector("nav");
+    navbar.innerHTML = `<h1>Hey!</h1> <p>This should align right.`;
+</script>
+
+</html>
